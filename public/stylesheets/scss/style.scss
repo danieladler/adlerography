@@ -1,8 +1,180 @@
+// responsive settings
+$small-screen: 320px;
+$large-mobile: 400px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+$x-large-screen: 1194px;
+$x-x-large-screen: 1440px;
+// constants for spatial relationships
+$hero-height-sm-up: 300px;
+$hero-height-md-up: 500px;
+$hero-height-lg-up: 600px;
+$tl-img-height: 250px;
+// z-indexes
+$z-index-hero: -999;
+$z-index-images: 1;
+$z-index-tl-wrapper: 2;
+$z-index-nav: 3;
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-width: $small-screen;
 }
 
-a {
-  color: #00B7FF
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: $z-index-nav;
+}
+
+#hero {
+  background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/header-temp-md.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z-index-hero;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media(min-width: $small-screen) {
+    height: $hero-height-sm-up;
+  }
+
+  @media(min-width: $medium-screen) {
+    height: $hero-height-md-up;
+  }
+
+  @media(min-width: $large-screen) {
+    height: $hero-height-lg-up;
+  }
+}
+
+.title-hero {
+  color: white;
+  margin: 0;
+
+  @media(min-width: $small-screen) {
+    font-size: 40px;
+  }
+
+  @media(min-width: $medium-screen) {
+    font-size: 60px;
+  }
+
+  @media(min-width: $large-screen) {
+    font-size: 80px;
+  }
+}
+
+#main-content {
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.tl-wrapper {
+  z-index: $z-index-tl-wrapper;
+  background-color: hsla(226, 90%, 67%, 0.25);
+  min-width: 200px;
+  height: 100%;
+
+  @media(min-width: $small-screen) {
+    margin-top: $hero-height-sm-up;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin-top: $hero-height-md-up;
+  }
+
+  @media(min-width: $large-screen) {
+    margin-top: $hero-height-lg-up;
+  }
+}
+
+
+.images {
+  z-index: $z-index-images;
+  width: 100%;
+}
+
+.images {
+  @media(min-width: $small-screen) {
+    margin-top: $hero-height-sm-up;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin-top: $hero-height-md-up;
+  }
+
+  @media(min-width: $large-screen) {
+    margin-top: $hero-height-lg-up;
+  }
+}
+
+.tl-item,
+.image {
+  height: $tl-img-height;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: .5px solid grey;
+}
+
+.image {
+  @media(min-width: 320px) {
+    background-color: lightblue;
+  }
+
+  @media(min-width: 768px) {
+    background-color: lemonchiffon;
+  }
+}
+
+.date,
+.placename {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.date {
+  font-size: 24px;
+}
+
+.placename {
+  text-transform: uppercase;
+}
+
+.tl-placename {
+  display: block;
+
+  @media(max-width: $medium-screen - 1px) {
+    font-size: 24px;
+  }
+
+  @media(min-width: $medium-screen) {
+    display: none;
+  }
+}
+
+.image-placename {
+  @media(max-width: $medium-screen - 1px) {
+    display: none;
+  }
+
+  @media(min-width: $medium-screen) {
+    font-size: 50px;
+  }
 }

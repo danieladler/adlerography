@@ -1,8 +1,183 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
 }
 
-a {
-  color: #00B7FF;
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 3;
+}
+
+#hero {
+  background-image: url("https://s3-us-west-2.amazonaws.com/adlerography/header-temp-md.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+@media (min-width: 320px) {
+  #hero {
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  #hero {
+    height: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  #hero {
+    height: 600px;
+  }
+}
+
+.title-hero {
+  color: white;
+  margin: 0;
+}
+@media (min-width: 320px) {
+  .title-hero {
+    font-size: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .title-hero {
+    font-size: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .title-hero {
+    font-size: 80px;
+  }
+}
+
+#main-content {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.tl-wrapper {
+  z-index: 2;
+  background-color: rgba(95, 130, 247, 0.25);
+  min-width: 200px;
+  height: 100%;
+}
+@media (min-width: 320px) {
+  .tl-wrapper {
+    margin-top: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .tl-wrapper {
+    margin-top: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .tl-wrapper {
+    margin-top: 600px;
+  }
+}
+
+.images {
+  z-index: 1;
+  width: 100%;
+}
+
+@media (min-width: 320px) {
+  .images {
+    margin-top: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .images {
+    margin-top: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .images {
+    margin-top: 600px;
+  }
+}
+
+.tl-item,
+.image {
+  height: 250px;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  border-bottom: .5px solid grey;
+}
+
+@media (min-width: 320px) {
+  .image {
+    background-color: lightblue;
+  }
+}
+@media (min-width: 768px) {
+  .image {
+    background-color: lemonchiffon;
+  }
+}
+
+.date,
+.placename {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.date {
+  font-size: 24px;
+}
+
+.placename {
+  text-transform: uppercase;
+}
+
+.tl-placename {
+  display: block;
+}
+@media (max-width: 767px) {
+  .tl-placename {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .tl-placename {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-placename {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .image-placename {
+    font-size: 50px;
+  }
 }
