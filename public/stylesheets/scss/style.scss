@@ -16,6 +16,8 @@ $z-index-hero: -999;
 $z-index-images: 1;
 $z-index-tl-wrapper: 2;
 $z-index-nav: 3;
+$z-index-modal: 998;
+$z-index-modal-close: 999;
 // transitions
 $common-transition: 0.3s;
 
@@ -84,6 +86,7 @@ body {
 #main-content {
   height: 100%;
   display: flex;
+  flex-direction: column;
   position: relative;
 }
 
@@ -189,5 +192,50 @@ body {
   @media(max-width: $medium-screen) {
     margin-left: $tl-left-sm + 10px;
     margin-bottom: 10px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-modal;
+  background-color: hsla(0, 0%, 10%, 0.9);
+
+  &.active {
+    display: block;
+  }
+}
+
+.modal-close {
+  border: 1px solid white;
+  background-color: ivory;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: $z-index-modal-close;
+
+  &:hover {
+    background-color: grey;
+    color: white;
+  }
+}
+
+.fotorama {
+  display: none;
+  margin: 10px;
+
+  &.active {
+    display: block;
   }
 }

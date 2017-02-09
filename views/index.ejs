@@ -3,10 +3,18 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous">
+    </script>
+    <!-- Fotorama: JS slideshow -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
   </head>
   <body>
     <nav class="nav">
-
+      &nbsp;
     </nav>
 
     <div id="hero">
@@ -14,17 +22,39 @@
     </div>
 
     <div id="main-content">
+      <div class="modal">
+        <div class="modal-close"> X </div>
+          <div class="fotorama"
+               data-section="1"
+               data-allowfullscreen="true"
+               data-width="100%"
+               data-maxheight="600"
+               data-ratio="800/600">
+            <img src="http://s.fotorama.io/1.jpg">
+            <img src="http://s.fotorama.io/2.jpg">
+          </div>
+          <div class="fotorama"
+               data-section="2"
+               data-allowfullscreen="true"
+               data-width="100%"
+               data-maxheight="600"
+               data-ratio="800/600">
+             <img src="http://s.fotorama.io/3.jpg">
+             <img src="http://s.fotorama.io/4.jpg">
+          </div>
+      </div>
+
       <div class="images">
-        <div class="image">
+        <div class="image" data-section="1">
           <div class="image-content">
-            <h3 class="date"> 2005 </h3>
-            <h2 class="placename"> placename 1 </h2>
+            <h3 class="date" data-section="1"> 2005 </h3>
+            <h2 class="placename" data-section="1"> placename 1 </h2>
           </div>
         </div>
-        <div class="image">
+        <div class="image" data-section="2">
           <div class="image-content">
-            <h3 class="date"> 2007 </h3>
-            <h2 class="placename"> placename 2 </h2>
+            <h3 class="date" data-section="2"> 2007 </h3>
+            <h2 class="placename" data-section="2"> placename 2 </h2>
           </div>
         </div>
         <div class="image">
@@ -57,4 +87,22 @@
       </div>
     </div>
   </body>
+
+  <script>
+    $(document).ready(function(){
+      const modal = $('.modal');
+
+      $('.placename, .date').click(function() {
+        const section = $(this).attr('data-section');
+        const fotorama = $(`.fotorama[data-section="${section}"]`);
+        modal.addClass('active');
+        fotorama.addClass('active');
+      });
+
+      $('.modal-close').click(function() {
+        $('.modal').removeClass('active');
+        $('.fotorama').removeClass('active');
+      });
+    });
+  </script>
 </html>
