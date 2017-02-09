@@ -63,6 +63,7 @@ body {
 .title-hero {
   color: white;
   margin: 0;
+  transition: 0.15s;
 
   @media(min-width: $small-screen) {
     font-size: 40px;
@@ -85,10 +86,37 @@ body {
 
 .tl-wrapper {
   z-index: $z-index-tl-wrapper;
-  background-color: hsla(226, 90%, 67%, 0.25);
   min-width: 200px;
   height: 100%;
+  $base-timeline-color: hsla(226, 90%, 67%, 0.25);
+  background-color: $base-timeline-color;
 
+}
+
+.tl-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: white;
+  transition: 0.15s;
+
+  @media(min-width: $small-screen) {
+    left: 25px;
+  }
+
+  @media(min-width: $medium-screen) {
+    left: 60px;
+  }
+}
+
+.images {
+  z-index: $z-index-images;
+  width: 100%;
+}
+
+.images {
   @media(min-width: $small-screen) {
     margin-top: $hero-height-sm-up;
   }
@@ -102,13 +130,7 @@ body {
   }
 }
 
-
-.images {
-  z-index: $z-index-images;
-  width: 100%;
-}
-
-.images {
+.tl-item:first-child {
   @media(min-width: $small-screen) {
     margin-top: $hero-height-sm-up;
   }
@@ -155,6 +177,14 @@ body {
 
 .placename {
   text-transform: uppercase;
+}
+
+.tl-date,
+.tl-placename {
+  @media(max-width: $medium-screen - 1px) {
+    text-align: left;
+    padding-left: 33px;
+  }
 }
 
 .tl-placename {
