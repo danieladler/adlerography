@@ -271,3 +271,14 @@ body {
     max-width: 1024px;
   }
 }
+
+.image[data-section="1"] {
+  background-image: url("https://s3-us-west-2.amazonaws.com/adlerography/eur-2005/eur-2005-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .image[data-section="1"] {
+    background-position: 0 -40px;
+  }
+}
