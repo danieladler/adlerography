@@ -239,7 +239,6 @@ body {
 
 .slider-wrap {
   display: none;
-  padding: 0;
   height: 100%;
   width: 100%;
 }
@@ -248,5 +247,10 @@ body {
 }
 
 .slider-wrap.active {
-  display: block;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider {
+  padding: 10px;
 }
