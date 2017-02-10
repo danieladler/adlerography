@@ -231,11 +231,17 @@ body {
   }
 }
 
-.fotorama {
+.slider-wrap {
   display: none;
-  margin: 10px;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 
-  &.active {
-    display: block;
+  img {
+    margin: 0 auto;
   }
+}
+
+.slider-wrap.active {
+  display: block;
 }

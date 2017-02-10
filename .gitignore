@@ -1,3 +1,4 @@
 /node_modules
 /public/images/temp_local_static
 .sass-cache/*
+.DS_store

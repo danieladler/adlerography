@@ -3,14 +3,10 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <!-- Fotorama: JS slideshow -->
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- bxSlider -->
+    <script src="/javascripts/jquery.bxslider.js"></script>
+    <link href="/stylesheets/jquery.bxslider.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="nav">
@@ -24,26 +20,19 @@
     <div id="main-content">
       <div class="modal">
         <div class="modal-close"> X </div>
-          <div class="fotorama"
-               data-section="1"
-               data-allowfullscreen="true"
-               data-width="100%"
-               data-maxheight="600"
-               data-ratio="800/600">
-            <img src="http://s.fotorama.io/1.jpg">
-            <img src="http://s.fotorama.io/2.jpg">
-          </div>
-          <div class="fotorama"
-               data-section="2"
-               data-allowfullscreen="true"
-               data-width="100%"
-               data-maxheight="600"
-               data-ratio="800/600">
-             <img src="http://s.fotorama.io/3.jpg">
-             <img src="http://s.fotorama.io/4.jpg">
-          </div>
+        <div class="slider-wrap" data-section="1">
+          <ul class="slider">
+            <li><img src="http://s.fotorama.io/1.jpg"/></li>
+            <li><img src="http://s.fotorama.io/2.jpg"/></li>
+          </ul>
+        </div>
+        <div class="slider-wrap" data-section="2">
+          <ul class="slider">
+            <li><img src="http://s.fotorama.io/3.jpg"/></li>
+            <li><img src="http://s.fotorama.io/4.jpg"/></li>
+          </ul>
+        </div>
       </div>
-
       <div class="images">
         <div class="image" data-section="1">
           <div class="image-content">
@@ -92,16 +81,23 @@
     $(document).ready(function(){
       const modal = $('.modal');
 
-      $('.placename, .date').click(function() {
+      $('.placename, .date').click(function(e) {
         const section = $(this).attr('data-section');
-        const fotorama = $(`.fotorama[data-section="${section}"]`);
+        const slider = $(`.slider-wrap[data-section="${section}"]`);
         modal.addClass('active');
-        fotorama.addClass('active');
+        slider.addClass('active');
+        $(window).trigger('resize');
       });
 
       $('.modal-close').click(function() {
         $('.modal').removeClass('active');
-        $('.fotorama').removeClass('active');
+        $('.slider-wrap').removeClass('active');
+      });
+
+      $('.slider').bxSlider({
+        mode: 'fade',
+        auto: true,
+        pause: 2000
       });
     });
   </script>
