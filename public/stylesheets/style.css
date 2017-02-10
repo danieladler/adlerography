@@ -254,3 +254,20 @@ body {
 .slider {
   padding: 10px;
 }
+
+@media (min-width: 320px) {
+  .bx-wrapper img {
+    max-height: 480px;
+  }
+}
+@media (min-width: 768px) {
+  .bx-wrapper img {
+    max-height: 720px;
+  }
+}
+@media (min-width: 1024px) {
+  .bx-wrapper img {
+    max-height: 920px;
+    max-width: 1024px;
+  }
+}

@@ -248,3 +248,18 @@ body {
 .slider {
   padding: 10px;
 }
+
+.bx-wrapper img {
+  @media(min-width: $small-screen) {
+    max-height: 480px;
+  }
+
+  @media(min-width: $medium-screen) {
+    max-height: 720px;
+  }
+
+  @media(min-width: $large-screen) {
+    max-height: 920px;
+    max-width: 1024px;
+  }
+}
