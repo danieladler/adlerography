@@ -15,6 +15,8 @@ $tl-left-md: 70px;
 $z-index-hero: -999;
 $z-index-images: 1;
 $z-index-tl-wrapper: 2;
+$z-index-image-background: 1;
+$z-index-image-content: 2;
 $z-index-nav: 3;
 $z-index-modal: 998;
 $z-index-modal-close: 999;
@@ -139,6 +141,29 @@ body {
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  // z-index: 2;
+
+  &:hover {
+    &::after {
+      content: "";
+      background-color: black;
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: $z-index-image-background;
+    }
+
+    .date[data-section="1"],
+    .placename[data-section="1"],
+    .date[data-section="3"],
+    .placename[data-section="3"] {
+      color: white;
+    }
+  }
 
   @media(min-width: $small-screen) {
     background-color: lightblue;
@@ -147,11 +172,18 @@ body {
   @media(min-width: $medium-screen) {
     background-position: 0 -40px;
     background-color: gold;
+
+    &:hover {
+      .placename {
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
 .image-content {
   display: flex;
+  z-index: $z-index-image-content;
 
   @media(min-width: $small-screen) {
     flex-direction: column;
@@ -169,28 +201,32 @@ body {
   text-align: center;
 
   @media(max-width: $medium-screen - 1px) {
-    font-size: 24px;
+    font-size: 32px;
     text-align: left;
   }
 
   @media(min-width: $medium-screen) {
-    font-size: 50px;
+    font-size: 64px;
     margin-right: 130px;
+    transform: translateY(-10px);
   }
 }
 
 .date {
   margin: 0;
+  font-family: "Megrim";
+  font-size: 24px;
 
   @media(min-width: $medium-screen) {
     margin-left: $tl-left-md + 10px;
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 
 .placename,
 .date {
   transition: $common-transition;
+  cursor: pointer;
 
   @media(max-width: $medium-screen) {
     margin-left: $tl-left-sm + 10px;
@@ -281,4 +317,35 @@ body {
 
 .image[data-section="4"] {
   background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/pacrim-2008/pacrim-2008-1.jpg');
+}
+
+// Europe
+.placename[data-section="1"] {
+  font-family: 'Kumar One Outline';
+}
+
+// Taiwan
+.placename[data-section="2"] {
+  font-family: 'Bungee Shade';
+}
+.placename[data-section="2"],
+.date[data-section="2"] {
+  color: white;
+  text-shadow: 2px 2px 2px rgba(80, 80, 80, 1);
+}
+
+// China
+.placename[data-section="3"] {
+  font-family: 'Bungee Inline';
+}
+
+// PacRim
+.placename[data-section="4"] {
+  font-family: 'Megrim';
+}
+
+.placename[data-section="4"],
+.date[data-section="4"] {
+  color: white;
+  text-shadow: 2px 2px 2px rgba(80, 80, 80, 1);
 }

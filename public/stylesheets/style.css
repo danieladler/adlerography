@@ -135,6 +135,24 @@ body {
       justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+.image:hover::after {
+  content: "";
+  background-color: black;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+.image:hover .date[data-section="1"],
+.image:hover .placename[data-section="1"],
+.image:hover .date[data-section="3"],
+.image:hover .placename[data-section="3"] {
+  color: white;
 }
 @media (min-width: 320px) {
   .image {
@@ -146,11 +164,15 @@ body {
     background-position: 0 -40px;
     background-color: gold;
   }
+  .image:hover .placename {
+    transform: scale(1.1);
+  }
 }
 
 .image-content {
   display: -ms-flexbox;
   display: flex;
+  z-index: 2;
 }
 @media (min-width: 320px) {
   .image-content {
@@ -173,30 +195,34 @@ body {
 }
 @media (max-width: 767px) {
   .placename {
-    font-size: 24px;
+    font-size: 32px;
     text-align: left;
   }
 }
 @media (min-width: 768px) {
   .placename {
-    font-size: 50px;
+    font-size: 64px;
     margin-right: 130px;
+    transform: translateY(-10px);
   }
 }
 
 .date {
   margin: 0;
+  font-family: "Megrim";
+  font-size: 24px;
 }
 @media (min-width: 768px) {
   .date {
     margin-left: 80px;
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 
 .placename,
 .date {
   transition: 0.3s;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .placename,
@@ -289,4 +315,32 @@ body {
 
 .image[data-section="4"] {
   background-image: url("https://s3-us-west-2.amazonaws.com/adlerography/pacrim-2008/pacrim-2008-1.jpg");
+}
+
+.placename[data-section="1"] {
+  font-family: 'Kumar One Outline';
+}
+
+.placename[data-section="2"] {
+  font-family: 'Bungee Shade';
+}
+
+.placename[data-section="2"],
+.date[data-section="2"] {
+  color: white;
+  text-shadow: 2px 2px 2px #505050;
+}
+
+.placename[data-section="3"] {
+  font-family: 'Bungee Inline';
+}
+
+.placename[data-section="4"] {
+  font-family: 'Megrim';
+}
+
+.placename[data-section="4"],
+.date[data-section="4"] {
+  color: white;
+  text-shadow: 2px 2px 2px #505050;
 }
