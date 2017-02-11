@@ -137,12 +137,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  @media(min-width: 320px) {
+  @media(min-width: $small-screen) {
     background-color: lightblue;
   }
 
-  @media(min-width: 768px) {
+  @media(min-width: $medium-screen) {
+    background-position: 0 -40px;
     background-color: gold;
   }
 }
@@ -266,10 +269,16 @@ body {
 
 .image[data-section="1"] {
   background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/eur-2005/eur-2005-3.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+}
 
-  @media(min-width: $medium-screen) {
-    background-position: 0 -40px;
-  }
+.image[data-section="2"] {
+  background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/tw-2007/tw-2007-3.jpg');
+}
+
+.image[data-section="3"] {
+  background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/cn-2007/cn-2007-18.jpg');
+}
+
+.image[data-section="4"] {
+  background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/pacrim-2008/pacrim-2008-1.jpg');
 }
