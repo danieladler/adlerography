@@ -22,5 +22,8 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-ruby-sass": "^2.1.1",
     "nodemon": "^1.11.0"
-  }
+  },
+  "engines": {
+    "node": "7.2.1"
+  },
 }
