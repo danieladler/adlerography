@@ -2,3 +2,4 @@
 /public/stylesheets/images/temp_local_static
 .sass-cache/*
 .DS_store
+.env
