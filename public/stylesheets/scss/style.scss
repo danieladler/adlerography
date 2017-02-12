@@ -11,6 +11,7 @@ $hero-height-md-up: 500px;
 $hero-height-lg-up: 600px;
 $tl-left-sm: 30px;
 $tl-left-md: 70px;
+$footer-height: 30px;
 // z-indexes
 $z-index-hero: -999;
 $z-index-images: 1;
@@ -22,6 +23,8 @@ $z-index-modal: 998;
 $z-index-modal-close: 999;
 // transitions
 $common-transition: 0.3s;
+// colors
+$color-footer: rgb(36, 36, 36);
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -42,7 +45,7 @@ body {
 }
 
 #hero {
-  background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/header-temp-md.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/adlerography/adlerography-hero-masked.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -69,6 +72,7 @@ body {
 
 .title-hero {
   color: white;
+  font-family: "Bungee Inline";
   margin: 0;
   transition: 0.15s;
 
@@ -94,7 +98,7 @@ body {
 
 .tl-wrapper {
   z-index: $z-index-tl-wrapper;
-  height: 100%;
+  background-color: $color-footer;
 }
 
 .tl-wrapper::before {
@@ -102,7 +106,8 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 3px;
+  // height: 1px;
+  width: 6px;
   background: white;
   transition: 0.15s;
 
@@ -142,13 +147,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  // z-index: 2;
 
   &:hover {
     &::after {
       content: "";
       background-color: black;
-      opacity: 0.7;
+      opacity: 0.85;
       top: 0;
       left: 0;
       bottom: 0;
@@ -157,11 +161,10 @@ body {
       z-index: $z-index-image-background;
     }
 
-    .date[data-section="1"],
-    .placename[data-section="1"],
-    .date[data-section="3"],
-    .placename[data-section="3"] {
+    .date,
+    .placename {
       color: white;
+      text-shadow: none;
     }
   }
 
@@ -199,6 +202,7 @@ body {
   margin: 0;
   text-transform: uppercase;
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
 
   @media(max-width: $medium-screen - 1px) {
     font-size: 32px;
@@ -250,17 +254,19 @@ body {
 }
 
 .modal-close {
-  border: 1px solid white;
-  background-color: ivory;
+  // border: 1px solid white;
+  background-color: rgb(100, 100, 100);
+  color: rgb(183, 183, 183);
   width: 30px;
   height: 30px;
   text-align: center;
   font-size: 24px;
-  border-radius: 4px;
+  border-radius: 20px;
+  padding: 2px;
   font-weight: bold;
   display: inline-block;
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
   z-index: $z-index-modal-close;
 
@@ -294,7 +300,8 @@ body {
   }
 
   @media(min-width: $medium-screen) {
-    max-height: 720px;
+    // max-height: 720px;
+    max-height: 600px;
   }
 
   @media(min-width: $large-screen) {
@@ -328,11 +335,6 @@ body {
 .placename[data-section="2"] {
   font-family: 'Bungee Shade';
 }
-.placename[data-section="2"],
-.date[data-section="2"] {
-  color: white;
-  text-shadow: 2px 2px 2px rgba(80, 80, 80, 1);
-}
 
 // China
 .placename[data-section="3"] {
@@ -344,8 +346,29 @@ body {
   font-family: 'Megrim';
 }
 
-.placename[data-section="4"],
-.date[data-section="4"] {
+.placename[data-section="4"] {
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 1);
+}
+
+#footer {
+  height: $footer-height;
+  background-color: $color-footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.footer-left {
   color: white;
-  text-shadow: 2px 2px 2px rgba(80, 80, 80, 1);
+  margin: 0;
+  padding-top: 15px;
+
+  @media(max-width: $medium-screen) {
+    margin-left: $tl-left-sm + 10px;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin-left: $tl-left-md + 10px;
+  }
 }

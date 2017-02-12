@@ -17,7 +17,7 @@ body {
 }
 
 #hero {
-  background-image: url("https://s3-us-west-2.amazonaws.com/adlerography/header-temp-md.jpg");
+  background-image: url("https://s3-us-west-2.amazonaws.com/adlerography/adlerography-hero-masked.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -50,6 +50,7 @@ body {
 
 .title-hero {
   color: white;
+  font-family: "Bungee Inline";
   margin: 0;
   transition: 0.15s;
 }
@@ -80,7 +81,7 @@ body {
 
 .tl-wrapper {
   z-index: 2;
-  height: 100%;
+  background-color: #242424;
 }
 
 .tl-wrapper::before {
@@ -88,7 +89,7 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 3px;
+  width: 6px;
   background: white;
   transition: 0.15s;
 }
@@ -140,7 +141,7 @@ body {
 .image:hover::after {
   content: "";
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.85;
   top: 0;
   left: 0;
   bottom: 0;
@@ -148,11 +149,10 @@ body {
   position: absolute;
   z-index: 1;
 }
-.image:hover .date[data-section="1"],
-.image:hover .placename[data-section="1"],
-.image:hover .date[data-section="3"],
-.image:hover .placename[data-section="3"] {
+.image:hover .date,
+.image:hover .placename {
   color: white;
+  text-shadow: none;
 }
 @media (min-width: 320px) {
   .image {
@@ -192,6 +192,7 @@ body {
   margin: 0;
   text-transform: uppercase;
   text-align: center;
+  text-shadow: 1px 1px 2px white;
 }
 @media (max-width: 767px) {
   .placename {
@@ -247,17 +248,18 @@ body {
 }
 
 .modal-close {
-  border: 1px solid white;
-  background-color: ivory;
+  background-color: #646464;
+  color: #b7b7b7;
   width: 30px;
   height: 30px;
   text-align: center;
   font-size: 24px;
-  border-radius: 4px;
+  border-radius: 20px;
+  padding: 2px;
   font-weight: bold;
   display: inline-block;
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
   z-index: 999;
 }
@@ -291,7 +293,7 @@ body {
 }
 @media (min-width: 768px) {
   .bx-wrapper img {
-    max-height: 720px;
+    max-height: 600px;
   }
 }
 @media (min-width: 1024px) {
@@ -325,12 +327,6 @@ body {
   font-family: 'Bungee Shade';
 }
 
-.placename[data-section="2"],
-.date[data-section="2"] {
-  color: white;
-  text-shadow: 2px 2px 2px #505050;
-}
-
 .placename[data-section="3"] {
   font-family: 'Bungee Inline';
 }
@@ -339,8 +335,33 @@ body {
   font-family: 'Megrim';
 }
 
-.placename[data-section="4"],
-.date[data-section="4"] {
+.placename[data-section="4"] {
+  text-shadow: 2px 2px 2px white;
+}
+
+#footer {
+  height: 30px;
+  background-color: #242424;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.footer-left {
   color: white;
-  text-shadow: 2px 2px 2px #505050;
+  margin: 0;
+  padding-top: 15px;
+}
+@media (max-width: 768px) {
+  .footer-left {
+    margin-left: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .footer-left {
+    margin-left: 80px;
+  }
 }
