@@ -72,12 +72,16 @@ body {
 
 .title-hero {
   color: white;
-  font-family: "Bungee Inline";
+  font-family: "Bungee";
   margin: 0;
   transition: 0.15s;
 
   @media(min-width: $small-screen) {
-    font-size: 40px;
+    font-size: 28px;
+  }
+
+  @media(min-width: $large-mobile) {
+    font-size: 32px;
   }
 
   @media(min-width: $medium-screen) {
@@ -257,8 +261,8 @@ body {
   // border: 1px solid white;
   background-color: rgb(100, 100, 100);
   color: rgb(183, 183, 183);
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   text-align: center;
   font-size: 24px;
   border-radius: 20px;
@@ -280,6 +284,7 @@ body {
   display: none;
   height: 100%;
   width: 100%;
+  margin-top: 10px;
 
   img {
     margin: 0 auto;
@@ -291,22 +296,22 @@ body {
 }
 
 .slider {
-  padding: 10px;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
+.bx-viewport,
 .bx-wrapper img {
   @media(min-width: $small-screen) {
     max-height: 480px;
   }
 
   @media(min-width: $medium-screen) {
-    // max-height: 720px;
     max-height: 600px;
   }
 
   @media(min-width: $large-screen) {
-    max-height: 920px;
-    max-width: 1024px;
+    max-height: 620px;
   }
 }
 
@@ -338,7 +343,7 @@ body {
 
 // China
 .placename[data-section="3"] {
-  font-family: 'Bungee Inline';
+  font-family: 'Bungee';
 }
 
 // PacRim

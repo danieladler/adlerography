@@ -50,13 +50,18 @@ body {
 
 .title-hero {
   color: white;
-  font-family: "Bungee Inline";
+  font-family: "Bungee";
   margin: 0;
   transition: 0.15s;
 }
 @media (min-width: 320px) {
   .title-hero {
-    font-size: 40px;
+    font-size: 28px;
+  }
+}
+@media (min-width: 400px) {
+  .title-hero {
+    font-size: 32px;
   }
 }
 @media (min-width: 768px) {
@@ -250,8 +255,8 @@ body {
 .modal-close {
   background-color: #646464;
   color: #b7b7b7;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   text-align: center;
   font-size: 24px;
   border-radius: 20px;
@@ -272,6 +277,7 @@ body {
   display: none;
   height: 100%;
   width: 100%;
+  margin-top: 10px;
 }
 .slider-wrap img {
   margin: 0 auto;
@@ -283,23 +289,26 @@ body {
 }
 
 .slider {
-  padding: 10px;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
 @media (min-width: 320px) {
+  .bx-viewport,
   .bx-wrapper img {
     max-height: 480px;
   }
 }
 @media (min-width: 768px) {
+  .bx-viewport,
   .bx-wrapper img {
     max-height: 600px;
   }
 }
 @media (min-width: 1024px) {
+  .bx-viewport,
   .bx-wrapper img {
-    max-height: 920px;
-    max-width: 1024px;
+    max-height: 620px;
   }
 }
 
@@ -328,7 +337,7 @@ body {
 }
 
 .placename[data-section="3"] {
-  font-family: 'Bungee Inline';
+  font-family: 'Bungee';
 }
 
 .placename[data-section="4"] {
