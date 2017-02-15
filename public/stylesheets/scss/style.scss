@@ -13,20 +13,20 @@ $tl-left-sm: 30px;
 $tl-left-md: 70px;
 $footer-height: 45px;
 // z-indexes
-$z-index-hero: -999;
+$z-index-hero: 1;
 $z-index-images: 1;
-// $z-index-tl-wrapper: 2;
-$z-index-image-background: 1;
 $z-index-image-content: 2;
 $z-index-nav: 3;
-$z-index-footer: 996;
+$z-index-footer: 3;
 $z-index-tl-wrapper: 997;
+$z-index-title-sub: 997;
 $z-index-modal: 998;
 $z-index-modal-close: 999;
 // transitions
 $common-transition: 0.3s;
 // colors
 $color-footer: rgb(36, 36, 36);
+$hover-gold: gold;
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -73,6 +73,19 @@ body {
   }
 }
 
+.dadler-link {
+  text-decoration: none;
+  font-weight: bold;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: $hover-gold;
+  }
+}
+
 .title-hero,
 .title-sub {
   color: white;
@@ -105,11 +118,15 @@ body {
   font-weight: 300;
   font-family: "Helvetica Neue";
 
+  .dadler-link {
+    text-decoration: none;
+    z-index: $z-index-title-sub;
+  }
+
   @media(min-width: $small-screen) {
     font-size: 12px;
     padding-right: 2px;
   }
-
 
   @media(min-width: $medium-screen) {
     font-size: 16px;
@@ -196,7 +213,6 @@ body {
       bottom: 0;
       right: 0;
       position: absolute;
-      z-index: $z-index-image-background;
     }
 
     .date,
@@ -459,7 +475,7 @@ body {
   }
 
   &:hover {
-    color: cornflowerblue;
+    color: $hover-gold;
   }
 
   @media(min-width: $small-screen) {

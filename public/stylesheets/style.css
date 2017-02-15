@@ -24,7 +24,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -999;
+  z-index: 1;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -48,6 +48,17 @@ body {
   #hero {
     height: 600px;
   }
+}
+
+.dadler-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+.dadler-link:visited {
+  color: white;
+}
+.dadler-link:hover {
+  color: gold;
 }
 
 .title-hero,
@@ -85,6 +96,10 @@ body {
   margin: 0;
   font-weight: 300;
   font-family: "Helvetica Neue";
+}
+.title-sub .dadler-link {
+  text-decoration: none;
+  z-index: 997;
 }
 @media (min-width: 320px) {
   .title-sub {
@@ -183,7 +198,6 @@ body {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: 1;
 }
 .image:hover .date,
 .image:hover .placename {
@@ -407,7 +421,7 @@ body {
 
 #footer {
   height: 45px;
-  z-index: 996;
+  z-index: 3;
   background-color: #242424;
 }
 
@@ -454,7 +468,7 @@ body {
   color: white;
 }
 .footer-link:hover {
-  color: cornflowerblue;
+  color: gold;
 }
 @media (min-width: 320px) {
   .footer-link {
