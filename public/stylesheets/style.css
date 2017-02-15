@@ -27,6 +27,8 @@ body {
   z-index: -999;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
@@ -48,20 +50,24 @@ body {
   }
 }
 
-.title-hero {
+.title-hero,
+.title-sub {
   color: white;
+  transition: 0.15s;
+}
+
+.title-hero {
   font-family: "Bungee";
   margin: 0;
-  transition: 0.15s;
 }
 @media (min-width: 320px) {
   .title-hero {
     font-size: 28px;
   }
 }
-@media (min-width: 400px) {
+@media (min-width: 412px) {
   .title-hero {
-    font-size: 32px;
+    font-size: 38px;
   }
 }
 @media (min-width: 768px) {
@@ -75,6 +81,24 @@ body {
   }
 }
 
+.title-sub {
+  margin: 0;
+  font-weight: 300;
+  font-family: "Helvetica Neue";
+}
+@media (min-width: 320px) {
+  .title-sub {
+    font-size: 12px;
+    padding-right: 2px;
+  }
+}
+@media (min-width: 768px) {
+  .title-sub {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+}
+
 #main-content {
   height: 100%;
   display: -ms-flexbox;
@@ -85,7 +109,7 @@ body {
 }
 
 .tl-wrapper {
-  z-index: 2;
+  z-index: 997;
   background-color: #242424;
 }
 
@@ -253,6 +277,7 @@ body {
 }
 
 .modal-close {
+  opacity: 0.8;
   background-color: #646464;
   color: #b7b7b7;
   width: 28px;
@@ -267,6 +292,15 @@ body {
   top: 20px;
   left: 10px;
   z-index: 999;
+}
+@media (max-width: 412px) {
+  .modal-close {
+    width: 50px;
+    height: 50px;
+    border-radius: 36px;
+    font-size: 36px;
+    line-height: 3.25rem;
+  }
 }
 .modal-close:hover {
   background-color: grey;
@@ -349,20 +383,20 @@ body {
 }
 
 #footer {
-  height: 30px;
+  height: 45px;
+  z-index: 996;
   background-color: #242424;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
+}
+
+.footer-left,
+.footer-right {
+  color: white;
 }
 
 .footer-left {
+  float: left;
   color: white;
-  margin: 0;
-  padding-top: 15px;
+  padding-top: 8px;
 }
 @media (max-width: 768px) {
   .footer-left {
@@ -372,5 +406,40 @@ body {
 @media (min-width: 768px) {
   .footer-left {
     margin-left: 80px;
+  }
+}
+
+.footer-right {
+  float: right;
+}
+@media (min-width: 320px) {
+  .footer-right {
+    margin-right: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .footer-right {
+    margin-right: 40px;
+  }
+}
+
+.footer-link {
+  color: white;
+  transition: 0.3s;
+}
+.footer-link:visited {
+  color: white;
+}
+.footer-link:hover {
+  color: cornflowerblue;
+}
+@media (min-width: 320px) {
+  .footer-link {
+    margin: 0 4px;
+  }
+}
+@media (min-width: 768px) {
+  .footer-link {
+    margin: 0 10px;
   }
 }
