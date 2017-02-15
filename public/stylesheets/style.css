@@ -153,6 +153,13 @@ body {
   }
 }
 
+.wedding a {
+  text-decoration: none;
+}
+.wedding a:visited {
+  color: black;
+}
+
 .image {
   width: 100%;
   height: 250px;
@@ -362,6 +369,14 @@ body {
   background-image: url("https://s3-us-west-2.amazonaws.com/adlerography/pacrim-2008/pacrim-2008-1.jpg");
 }
 
+.image[data-section="5"] {
+  background-image: url("https://s3-us-west-2.amazonaws.com/barlee-2016/1-interior-prep/01-1up-2529.jpg");
+}
+
+.image[data-section="6"] {
+  background-image: url("https://s3-us-west-2.amazonaws.com/lauren-steve/750_8077.jpg");
+}
+
 .placename[data-section="1"] {
   font-family: 'Kumar One Outline';
 }
@@ -380,6 +395,14 @@ body {
 
 .placename[data-section="4"] {
   text-shadow: 2px 2px 2px white;
+}
+
+.placename[data-section="5"] {
+  font-family: "Oswald";
+}
+
+.placename[data-section="6"] {
+  font-family: "Poiret One";
 }
 
 #footer {
