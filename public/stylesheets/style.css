@@ -227,6 +227,12 @@ body {
   display: flex;
   z-index: 2;
 }
+@media (max-width: 767px) {
+  .image-content {
+    position: absolute;
+    left: 40px;
+  }
+}
 @media (min-width: 320px) {
   .image-content {
     -ms-flex-direction: column;
@@ -281,7 +287,6 @@ body {
 @media (max-width: 768px) {
   .placename,
   .date {
-    margin-left: 40px;
     margin-bottom: 10px;
   }
 }

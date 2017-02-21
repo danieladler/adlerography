@@ -245,6 +245,11 @@ body {
   display: flex;
   z-index: $z-index-image-content;
 
+  @media(max-width: $medium-screen - 1px) {
+    position: absolute;
+    left: $tl-left-sm + 10px;
+  }
+
   @media(min-width: $small-screen) {
     flex-direction: column;
   }
@@ -290,7 +295,6 @@ body {
   cursor: pointer;
 
   @media(max-width: $medium-screen) {
-    margin-left: $tl-left-sm + 10px;
     margin-bottom: 10px;
   }
 }
