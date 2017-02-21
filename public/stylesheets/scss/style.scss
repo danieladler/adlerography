@@ -74,6 +74,7 @@ body {
 }
 
 .dadler-link {
+  color: white;
   text-decoration: none;
   font-weight: bold;
 
@@ -183,11 +184,9 @@ body {
 }
 
 .wedding {
-  a {
-    text-decoration: none;
-  }
-
+  a,
   a:visited {
+    text-decoration: none;
     color: black;
   }
 }
@@ -202,6 +201,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  &:last-child {
+    border-bottom: transparent;
+  }
 
   &:hover {
     &::after {
@@ -447,6 +450,7 @@ body {
 
   @media(max-width: $medium-screen) {
     margin-left: $tl-left-sm + 10px;
+    font-size: 10px;
   }
 
   @media(min-width: $medium-screen) {
